@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
+import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Input } from 'react-native-elements';
+import { Button } from 'react-native-elements';
+import { Container, Content, Form, Item, Input, Label, Icon, ListItem, Left, Body, Text } from 'native-base';
 
 function HomeScreen({ navigation }) {
   return (
@@ -18,26 +19,34 @@ function HomeScreen({ navigation }) {
 
 function TelaCadastro() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Input
-        placeholder='  Nome'
-        leftIcon={{ type: 'ionicon', name: 'person-circle-outline' }}
-      />
-      <Input
-        placeholder='  Email'
-        leftIcon={{ type: 'ionicon', name: 'mail-outline' }}
-      />
-      <Input 
-        placeholder="  Senha" 
-        leftIcon={{ type: 'ionicon', name: 'key-outline' }}
-        secureTextEntry={true} 
-      />
-      <Input 
-      placeholder='  Telefone'
-      leftIcon={{ type: 'ionicon', name: 'call-outline' }}
-      keyboardType = 'numeric'
-      />
-    </View>
+    <Container>
+      <Content>
+        <Form>
+          <Item stackedLabel >
+            <Label>Nome</Label>
+            <Input />
+          </Item>
+          <Item stackedLabel >
+            <Label>Email</Label>
+            <Input />
+          </Item>
+          <Item stackedLabel >
+            <Label>Senha</Label>
+            <Input />
+          </Item>
+          <Item stackedLabel >
+            <Label>Telefone</Label>
+            <Input />
+          </Item>
+        </Form>
+      </Content>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          title="Salvar"
+          type="outline"
+        />
+      </View>
+    </Container>
   );
 }
 

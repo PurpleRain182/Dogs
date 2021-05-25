@@ -7,3 +7,5 @@
 @react-navigation/stack
 react-native-elements
 react-native-vector-icons
+native-base --save
+expo install expo-font
