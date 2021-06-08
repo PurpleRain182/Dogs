@@ -16,50 +16,41 @@ export default class SignUpScreen extends React.Component {
         return (
             <Container>
                 <Content>
-                    {/* <Image style={{
+                     <Image style={{
                         resizeMode: "center",
                         height: 150,
                         width: 150,
                         paddingLeft: 400
                     }}
-                        source={require('./src/assets/logo.png')}
-                    /> */}
+                        source={require('../assets/logo.jpeg')}
+                    /> 
                     <Form>
-                        <View style={{ paddingBottom: 13, paddingRight: 5, paddingLeft: 5 }}>
+                        <View style={{ paddingBottom: 13, paddingRight: 20, paddingLeft: 20 }}>
                             <Item regular >
-                                <Input style={{
-                                    backgroundColor: 'black'
-                                }} placeholderTextColor='white' placeholder='Nome completo' />
+                                <Input placeholder='Nome completo' />
                             </Item>
                         </View>
 
-                        <View style={{ paddingBottom: 13, paddingRight: 5, paddingLeft: 5 }}>
+                        <View style={{ paddingBottom: 13, paddingRight: 20, paddingLeft: 20 }}>
                             <Item regular >
-                                <Input style={{
-                                    backgroundColor: 'black'
-                                }} placeholderTextColor='white'
-                                    placeholder='E-mail' />
+                                <Input placeholder='E-mail' />
                             </Item>
                         </View>
 
-                        <View style={{ paddingBottom: 13, paddingRight: 5, paddingLeft: 5 }}>
+                        <View style={{ paddingBottom: 13, paddingRight: 20, paddingLeft: 20 }}>
                             <Item regular >
-                                <Input style={{
-                                    backgroundColor: 'black'
-                                }} placeholderTextColor='white' placeholder='Senha' />
+                                <Input secureTextEntry={true} placeholder='Senha' />
                             </Item>
                         </View>
 
-                        <View style={{ paddingBottom: 13, paddingRight: 5, paddingLeft: 5 }}>
+                        <View style={{ paddingBottom: 13, paddingRight: 20, paddingLeft: 20 }}>
                             <Item regular >
-                                <Input style={{
-                                    backgroundColor: 'black'
-                                }} placeholderTextColor='white' placeholder='Telefone' />
+                                <Input placeholder='Telefone' />
                             </Item>
                         </View>
 
-                        <Button full rounded bordered light style={{ backgroundColor: 'black', margin: 20, marginTop: 50 }}>
-                            <Text style={{ color: 'white', fontWeight: 'bold' }}>Cadastrar</Text>
+                        <Button full bordered light style={{ backgroundColor: '#ffd185', margin: 20, marginTop: 50 }}>
+                            <Text style={{ color: 'black', fontWeight: 'bold' }}>Cadastrar</Text>
                         </Button>
                         <Text style={{ textAlign: 'center' }}>Ao cadastrar-se, você concorda com nossos</Text>
                         <Text style={{ fontWeight: 'bold', textAlign: 'center' }}> Termos e Política de Privacidade.</Text>
