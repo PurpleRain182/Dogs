@@ -30,7 +30,7 @@ function RootStack() {
                     name="Cadastro"
                     component={Cadastro}
                     initialParams={{ user: 'me' }}
-                    options={{ title: 'Cadastro' }}
+                    options={{ title: ''}}
                 />
             </Stack.Navigator>
         </NavigationContainer>

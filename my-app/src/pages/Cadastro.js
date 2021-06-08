@@ -49,7 +49,7 @@ export default class SignUpScreen extends React.Component {
                             </Item>
                         </View>
 
-                        <Button full bordered light style={{ backgroundColor: '#ffd185', margin: 20, marginTop: 50 }}>
+                        <Button full bordered light style={{ backgroundColor: '#F8CC8F', margin: 20, marginTop: 50 }}>
                             <Text style={{ color: 'black', fontWeight: 'bold' }}>Cadastrar</Text>
                         </Button>
                         <Text style={{ textAlign: 'center' }}>Ao cadastrar-se, você concorda com nossos</Text>
