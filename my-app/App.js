@@ -22,6 +22,46 @@ function HomeScreen({ navigation }) {
   );
 }
 
+function TelaCadastro() {
+  return (
+    <Container>
+      <Content>
+        <Image style={{ resizeMode: "center", height: 100, width: 100, paddingLeft: 350 }}
+          source={require('./assets/logo.png')}
+        />
+        <Form>
+          <Item stackedLabel>
+            <Label>Nome</Label>
+            <Input />
+          </Item>
+          <Item stackedLabel >
+            <Label>Email</Label>
+            <Input />
+          </Item>
+          <Item stackedLabel>
+            <Label>Senha</Label>
+            <Input />
+          </Item>
+          <Item stackedLabel >
+            <Label>Telefone</Label>
+            <Input />
+          </Item>
+          <Item regular>
+            <Input style={{ color: 'red' }} placeholderTextColor='red' placeholder='Regular Textbox' />
+          </Item>
+          <Item regular>
+            <Input placeholderTextColor='yellow' placeholder='Regular Textbox' />
+          </Item>
+          <Button full rounded bordered light style={{ margin: 20, marginTop: 50 }}>
+            <Text>Cadastrar</Text>
+          </Button>
+          <Text style={{ textAlign: 'center' }}>Ao cadastrar-se, você concorda com nossos <Text style={{ fontWeight: 'bold' }}>Termos de Política e Privacidade</Text></Text>
+        </Form>
+      </Content>
+    </Container>
+  );
+}
+
 function NewsFeed() {
   return (
     <Container>
