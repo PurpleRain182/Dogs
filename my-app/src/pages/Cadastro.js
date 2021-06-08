@@ -3,7 +3,7 @@ import { View, Image } from 'react-native';
 
 //import styles from '../styles/SignUpScreen';
 
-import { Container, Content, Form, Item, Input, Label, Text, Button } from 'native-base';
+import { Container, Content, Form, Item, Input, Text, Button } from 'native-base';
 export default class SignUpScreen extends React.Component {
 
     static navigationOptions = {
