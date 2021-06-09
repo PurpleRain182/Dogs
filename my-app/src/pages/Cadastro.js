@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { View, Image } from 'react-native';
+import { Container, Content, Form, Item, Input, Text, Button, Label } from 'native-base';
 
 import styles from '../styles/Cadastro';
 
-import { Container, Content, Form, Item, Input, Text, Button } from 'native-base';
 export default class Cadastro extends React.Component {
 
     static navigationOptions = {
         title: 'User',
     };
 
-
     render() {
         const { navigation } = this.props;
+
         return (
             <Container>
                 <Content>
@@ -20,31 +20,35 @@ export default class Cadastro extends React.Component {
                         source={require('../assets/logo.jpeg')}
                     />
                     <Form>
-                        <View style={styles.view}>
-                            <Item regular >
-                                <Input placeholder='Nome completo' />
+                        <View>
+                            <Item floatingLabel>
+                                <Label>Nome completo</Label>
+                                <Input />
                             </Item>
                         </View>
 
-                        <View style={styles.view}>
-                            <Item regular >
-                                <Input placeholder='E-mail' />
+                        <View>
+                            <Item floatingLabel>
+                                <Label>E-mail</Label>
+                                <Input />
                             </Item>
                         </View>
 
-                        <View style={styles.view}>
-                            <Item regular >
-                                <Input secureTextEntry={true} placeholder='Senha' />
+                        <View>
+                            <Item floatingLabel>
+                                <Label>Senha</Label>
+                                <Input secureTextEntry={true} />
                             </Item>
                         </View>
 
-                        <View style={styles.view}>
-                            <Item regular >
-                                <Input placeholder='Telefone' />
+                        <View>
+                            <Item floatingLabel>
+                                <Label>Telefone</Label>
+                                <Input keyboardType={'numeric'} />
                             </Item>
                         </View>
 
-                        <Button full bordered light style={styles.button}>
+                        <Button full rounded bordered light style={styles.button}>
                             <Text style={styles.textButton}>Cadastrar</Text>
                         </Button>
                         <Text style={styles.textCadastro}>Ao cadastrar-se, você concorda com nossos</Text>

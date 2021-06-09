@@ -13,13 +13,13 @@ const styles = StyleSheet.create({
 
   image: {
     flex: 1,
-    marginTop: hp('3%'),
-    marginLeft: hp('6%'),
+    marginTop: hp('0%'),
+    marginLeft: hp('7.5%'),
     resizeMode: 'contain',
   },
 
   button: {
-    flex:1,
+    flex: 1,
     alignItems: 'center',
     padding: hp('2%'),
     marginTop: hp('3%'),
@@ -29,16 +29,16 @@ const styles = StyleSheet.create({
   },
 
   textButton: {
-    color: 'black', 
+    color: 'black',
     fontWeight: 'bold'
   },
 
-  textCadastro:{
+  textCadastro: {
     marginTop: hp('3%'),
     textAlign: 'center'
   },
 
-  textCadastro1:{
+  textCadastro1: {
     textAlign: 'center',
     fontWeight: 'bold'
   },
