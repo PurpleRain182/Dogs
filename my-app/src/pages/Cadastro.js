@@ -4,6 +4,11 @@ import { Container, Content, Form, Item, Input, Text, Button, Label } from 'nati
 
 import styles from '../styles/Cadastro';
 
+<<<<<<< Updated upstream
+=======
+import { Container, Content, Form, Item, Input, Text, Button } from 'native-base';
+
+>>>>>>> Stashed changes
 export default class Cadastro extends React.Component {
 
     static navigationOptions = {
@@ -53,6 +58,9 @@ export default class Cadastro extends React.Component {
                         </Button>
                         <Text style={styles.textCadastro}>Ao cadastrar-se, você concorda com nossos</Text>
                         <Text style={styles.textCadastro1}>Termos e Política de Privacidade.</Text>
+                        <Button style={styles.button}
+                                title="Feed"
+                                onPress={() => navigation.navigate('Feed')}/>
                     </Form>
                 </Content>
             </Container>

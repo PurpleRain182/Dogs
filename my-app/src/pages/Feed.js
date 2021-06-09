@@ -1,58 +1,47 @@
-import React from 'react';
-import {
-  View,
-  TouchableOpacity,
-  Text
-} from 'react-native'; 
+import React, { Component } from 'react';
+import { Image } from 'react-native';
+import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 
 import styles from '../styles/Feed';
 
-import {List, ListItem, Container, Content} from 'native-base';
-export default class Feed extends React.Component { 
-   buttonClickListener = () => {
-    alert("Deseja realmente deletar sua conta?");
-  };
-  // TODO: implement your navigationOptions
+export default class Feed extends Component {
+
   render() {
     return (
- 
-            <View style={styles.container}>
-
-
-                <View style ={styles.view}>
-                
-                <Text style = {styles.title}>MatchFy</Text>
-                <Text style = {styles.subtitle}>Logo</Text>
-                
-                <List>
-                  <ListItem>
-                    <Text style = {styles.type}>{'Versão atual\n'}
-                    <Text style = {styles.description}>{'1.0.0'}</Text></Text> 
-                  </ListItem>
-
-                  <ListItem>
-                    <Text style = {styles.type}>{'Criado por\n'}<Text style = {styles.description}>{'IFSULDEMINAS e cia'}</Text></Text>
-                  </ListItem>
-
-                  <ListItem>
-                    <Text style = {styles.type}>{'Última atualização\n'}<Text style = {styles.description}>18/08/2019</Text></Text>
-                  </ListItem>
-
-                   <ListItem>
-                     <Text style = {styles.type}>{'Seu ID\n'}<Text style = {styles.description}>'XXXXX-XX'</Text></Text>
-                   </ListItem>
-                  </List>
-
-                  <TouchableOpacity
-                   style = {styles.button}
-                   onPress={this.buttonClickListener}
-                 >
-                   <Text style = {styles.textButton}> Deletar conta </Text>
-                 </TouchableOpacity>  
-          </View>
-
-      </View>
-
-    )
+      <Container>
+        <Content>
+          <Card>
+            <CardItem>
+              <Left>
+                <Thumbnail source={{ uri: 'https://s2.glbimg.com/slaVZgTF5Nz8RWqGrHRJf0H1PMQ=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/U/e/NTegqdSe6SoBAoQDjKZA/cachorro.jpg' }} />
+                <Body>
+                  <Text>NativeBase</Text>
+                  <Text note>GeekyAnts</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem cardBody>
+              <Image source={{ uri: 'https://s2.glbimg.com/slaVZgTF5Nz8RWqGrHRJf0H1PMQ=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/U/e/NTegqdSe6SoBAoQDjKZA/cachorro.jpg' }} style={ styles.image } />
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Text>12 anos</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="paw-outline" />
+                  <Text>Brincalhona</Text>
+                </Button>
+              </Body>
+              <Right>
+              <Icon style = {styles.shareIcon} active name="share-social-outline" />
+              </Right>
+            </CardItem>
+          </Card>
+        </Content>
+      </Container>
+    );
   }
 }

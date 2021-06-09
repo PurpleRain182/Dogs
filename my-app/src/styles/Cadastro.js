@@ -3,6 +3,10 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 const styles = StyleSheet.create({
 
+  container: {
+    flex: 1
+  },
+
   view: {
     flex: 1,
     backgroundColor: 'white',
