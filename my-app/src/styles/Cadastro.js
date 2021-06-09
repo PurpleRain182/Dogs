@@ -1,56 +1,47 @@
 import { StyleSheet } from 'react-native';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
 
-container:{
+  view: {
     flex: 1,
-    flexDirection: "column",
-    backgroundColor: "white",
-},
+    backgroundColor: 'white',
+    marginTop: hp('3%'),
+    paddingRight: hp('5%'),
+    paddingLeft: hp('5%')
+  },
 
-view:{
-  flex: 1, 
-  backgroundColor:'white',
-  marginTop: hp('5%'), 
-},
+  image: {
+    flex: 1,
+    marginTop: hp('3%'),
+    marginLeft: hp('6%'),
+    resizeMode: 'contain',
+  },
 
-title:{
-  textAlign: 'center', 
-  fontSize: hp('10%'),
-},
+  button: {
+    flex:1,
+    alignItems: 'center',
+    padding: hp('2%'),
+    marginTop: hp('3%'),
+    backgroundColor: '#F8CC8F',
+    width: wp('82.5%'),
+    marginLeft: hp('5%'),
+  },
 
-subtitle:{
-  fontSize: hp('3%'), 
-  marginLeft: hp('33%'), 
-  paddingBottom: hp('3%'),
-},
+  textButton: {
+    color: 'black', 
+    fontWeight: 'bold'
+  },
 
-type:{
-  color:'black',
-  fontSize: hp('3%'),
-  fontWeight: "bold"
-},
+  textCadastro:{
+    marginTop: hp('3%'),
+    textAlign: 'center'
+  },
 
-description:{
-  color:'gray',
-  fontSize: hp('2.2%'), 
-},
-
-button:{
-  alignItems: 'center', 
-  backgroundColor:'#fc1808', 
-  padding: hp('2%'), 
-  borderRadius:100, 
-  marginTop: hp('6%'),  
-  width : hp('20%'), 
-  marginLeft: hp('17%'),  
-},
-
-textButton:{
-  color:'white',
-},
-
+  textCadastro1:{
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
 
 });
 
