@@ -4,11 +4,8 @@ import { Container, Content, Form, Item, Input, Text, Button, Label } from 'nati
 
 import styles from '../styles/Cadastro';
 
-<<<<<<< Updated upstream
-=======
 import { Container, Content, Form, Item, Input, Text, Button } from 'native-base';
 
->>>>>>> Stashed changes
 export default class Cadastro extends React.Component {
 
     static navigationOptions = {
