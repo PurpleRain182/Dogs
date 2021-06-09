@@ -1,15 +1,10 @@
 import * as     React from 'react';
-import {
-    View,
-    StyleSheet,
-    ImageBackground,
-    Button
-} from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Text } from 'native-base';
+import { Link } from '@react-navigation/native';
+import { View, StyleSheet, Image } from 'react-native';
+import { Container, Content, Form, Item, Input, Label, Text, Button } from 'native-base';
 
-//import styles from '../styles/Login';
+import styles from '../styles/Login';
 
-const image = { uri: "https://i.pinimg.com/236x/83/02/5d/83025d90c8303cf6bf02fa749ef19acb.jpg" };
 
 export default class Login extends React.Component {
 
@@ -23,53 +18,34 @@ export default class Login extends React.Component {
             <Container>
                 <Content>
                     <View style={styles.container}>
-                        <ImageBackground source={image}
-                            style={styles.image}>
+                        <Image style={styles.image}
+                            source={require('../assets/logo.jpeg')}
+                        />
+                        <Form style={{ marginTop: 100 }} >
+                            <Item stackedLabel>
+                                <Label style={styles.text}>Email</Label>
+                                <Input />
+                            </Item>
 
-                            <Form style={{ marginTop: 240 }} >
-                                <Item stackedLabel>
-                                    <Label style={styles.text}>Email</Label>
-                                    <Input />
-                                </Item>
+                            <Item stackedLabel  >
+                                <Label style={styles.text}>Senha</Label>
+                                <Input />
+                            </Item>
+                        </Form>
 
-                                <Item stackedLabel  >
-                                    <Label style={styles.text}>Senha</Label>
-                                    <Input />
-                                </Item>
-                            </Form>
+                        <Button full rounded bordered light style={styles.button} onPress={() => navigation.navigate('Feed')}>
+                            <Text style={styles.textButton}>Entrar</Text>
+                        </Button>
+                    
+                        <Text style={styles.textNovaConta}>Esqueceu a senha?</Text>
 
-                            <Button style={{ marginTop: 25 }}
-                                title="Entrar"
-                                onPress={() => navigation.navigate('Cadastro')}
-                            />
+                        <Text style={styles.textNovaConta}><Text style={styles.textSpace}>-------------------------------------</Text> ou <Text style={styles.textSpace}>-------------------------------------</Text></Text>
 
-                            <Text style={styles.text}>Não possui conta?</Text>
+                        <Text style={styles.textNovaConta}>Não possui conta? <Text style={styles.textCadastro}><Link to="/Cadastro">Cadastre-se aqui.</Link></Text></Text>
 
-                            <Button style={{ marginTop: 20 }}
-                                title="Faça seu cadastro aqui"
-                                onPress={() => navigation.navigate('Cadastro')}
-                            />
-                        </ImageBackground>
                     </View>
                 </Content>
             </Container>
         );
     }
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    image: {
-        flex: 1,
-        resizeMode: "cover",
-        justifyContent: "center"
-    },
-    text: {
-        color: "white",
-        fontSize: 20,
-        fontWeight: "bold",
-        textAlign: "center",
-        marginTop: 10
-    }
-});

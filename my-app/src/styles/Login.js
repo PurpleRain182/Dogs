@@ -38,19 +38,40 @@ description:{
 },
 
 button:{
-  alignItems: 'center', 
-  backgroundColor:'#fc1808', 
-  padding: hp('2%'), 
-  borderRadius:100, 
-  marginTop: hp('6%'),  
-  width : hp('20%'), 
-  marginLeft: hp('17%'),  
+  flex: 1,
+    alignItems: 'center',
+    padding: hp('2%'),
+    marginTop: hp('3%'),
+    backgroundColor: '#F8CC8F',
+    width: wp('82.5%'),
+    marginLeft: hp('5%'), 
+},
+
+image: {
+  flex: 1,
+  marginTop: hp('0%'),
+  marginLeft: hp('9,5%'),
+  resizeMode: 'contain',
 },
 
 textButton:{
-  color:'white',
+  color:'black',
+  fontWeight: 'bold'
 },
 
+textNovaConta: {
+  textAlign: 'center',
+  marginTop: hp('1%')
+},
+
+textCadastro: {
+  fontWeight: 'bold',
+  textDecorationLine: 'underline'
+},
+
+textSpace: {
+  textDecorationLine: 'line-through'
+}
 
 });
 
