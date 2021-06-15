@@ -25,6 +25,7 @@ function RootStack() {
                     name="Feed"
                     component={Feed}
                     initialParams={{ user: 'me' }}
+                    options={{ headerShown: false}}
                 />
                 <Stack.Screen
                     name="Cadastro"

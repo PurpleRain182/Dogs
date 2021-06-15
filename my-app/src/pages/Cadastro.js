@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { View, Image, Alert } from 'react-native';
 import { Container, Content, Form, Item, Input, Text, Button, Label } from 'native-base';
 import api from '../services/api'
@@ -41,26 +41,26 @@ export default class Cadastro extends React.Component {
 
     render() {
 
-       // const [nome, setNome] = useState(initialState=null);
-       // const [email, setEmail] = useState(initialState=null);
-       // const [senha, setSenha] = useState(initialState=null);
-       // const [telefone, setTelefone] = useState(initialState=null);
+        // const [nome, setNome] = useState(initialState=null);
+        // const [email, setEmail] = useState(initialState=null);
+        // const [senha, setSenha] = useState(initialState=null);
+        // const [telefone, setTelefone] = useState(initialState=null);
         const { navigation } = this.props;
 
-        const handleCadastro = async(nome,email,senha,telefone,username) => {
+        const handleCadastro = async (nome, email, senha, telefone, username) => {
             const response = await api.post('/users', {
                 nome,
-                email, 
+                email,
                 password: senha,
                 telefone,
                 username
             })
 
             console.warn(response)
-            if(response.data){
+            if (response.data) {
                 navigation.navigate('Login')
             }
-            else{
+            else {
                 Alert.alert("Erro no cadastro")
             }
         }
@@ -99,20 +99,20 @@ export default class Cadastro extends React.Component {
                         <View>
                             <Item floatingLabel>
                                 <Label>Senha</Label>
-                                <Input secureTextEntry={true} 
-                                placeholder="Senha"
-                                value={this.state.senha}
-                                onChangeText={this.handlePasswordChange}
-                                autoCapitalize="none"
-                                autoCorrect={false}
-                            />
+                                <Input secureTextEntry={true}
+                                    placeholder="Senha"
+                                    value={this.state.senha}
+                                    onChangeText={this.handlePasswordChange}
+                                    autoCapitalize="none"
+                                    autoCorrect={false}
+                                />
                             </Item>
                         </View>
 
                         <View>
                             <Item floatingLabel>
                                 <Label>Telefone</Label>
-                                <Input keyboardType={'numeric'} 
+                                <Input keyboardType={'numeric'}
                                     placeholder="Telefone"
                                     value={this.state.telefone}
                                     onChangeText={this.handleTelefoneChange}
@@ -125,7 +125,7 @@ export default class Cadastro extends React.Component {
                         <View>
                             <Item floatingLabel>
                                 <Label>Username</Label>
-                                <Input 
+                                <Input
                                     placeholder="Username"
                                     value={this.state.username}
                                     onChangeText={this.handleUsernameChange}
@@ -135,15 +135,19 @@ export default class Cadastro extends React.Component {
                             </Item>
                         </View>
 
-                        <Button full rounded bordered light style={styles.button}>
+                        <Button full rounded bordered light style={styles.button}
+                            title="Feed"
+                            onPress={() => handleCadastro(this.state.nome, this.state.email, this.state.senha, this.state.telefone,
+                                this.state.username)}>
                             <Text style={styles.textButton}>Cadastrar</Text>
                         </Button>
+
                         <Text style={styles.textCadastro}>Ao cadastrar-se, você concorda com nossos</Text>
                         <Text style={styles.textCadastro1}>Termos e Política de Privacidade.</Text>
+
                         <Button style={styles.button}
-                                title="Feed"
-                                onPress={() => handleCadastro(this.state.nome,this.state.email,this.state.senha,this.state.telefone,
-                                    this.state.username)}/>
+                            title="Feed"
+                            onPress={() => navigation.navigate('Feed')} />
                     </Form>
                 </Content>
             </Container>
