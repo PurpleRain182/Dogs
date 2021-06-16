@@ -10,3 +10,6 @@ react-native-vector-icons
 native-base --save
 expo install expo-font
 react-native-responsive-screen
+npm install axios
+@react-navigation/bottom-tabs
+@react-navigation/material-bottom-tabs 

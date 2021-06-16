@@ -136,7 +136,6 @@ export default class Cadastro extends React.Component {
                         </View>
 
                         <Button full rounded bordered light style={styles.button}
-                            title="Feed"
                             onPress={() => handleCadastro(this.state.nome, this.state.email, this.state.senha, this.state.telefone,
                                 this.state.username)}>
                             <Text style={styles.textButton}>Cadastrar</Text>
@@ -147,7 +146,9 @@ export default class Cadastro extends React.Component {
 
                         <Button style={styles.button}
                             title="Feed"
-                            onPress={() => navigation.navigate('Feed')} />
+                            onPress={() => navigation.navigate('Feed')}>
+                            <Text style={styles.textButton}>Feed</Text>
+                        </Button>
                     </Form>
                 </Content>
             </Container>
