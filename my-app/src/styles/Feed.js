@@ -17,6 +17,27 @@ const styles = StyleSheet.create({
     color: 'blue',
   },
 
+  uploadImage: {
+    flex: 1,
+    resizeMode: 'contain',
+    width: wp('30%'), 
+    height: hp('25%'),
+    marginTop: 100, 
+    marginLeft: 120
+  },
+
+  uploadText: {
+    flex: 1,
+    alignContent: 'center',
+    marginBottom: 150,
+    marginTop: 0
+  },
+
+  uploadButton: {
+    backgroundColor: '#F8CC8F',
+    marginLeft: 20
+  },
+
 });
 
 export default styles;

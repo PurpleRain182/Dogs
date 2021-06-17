@@ -1,15 +1,28 @@
 import * as React from 'react';
-import { Image, View } from 'react-native';
-import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { Image } from 'react-native';
+import { Container, Content, Card, CardItem, Thumbnail, Input, Text, Button, Icon, Left, Body, Right, Header, Item } from 'native-base';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 
 import styles from '../styles/Feed';
+
+let openImagePickerAsync = async () => {
+  let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+  if (permissionResult.granted === false) {
+    alert("Permission to access camera roll is required!");
+    return;
+  }
+
+  let pickerResult = await ImagePicker.launchImageLibraryAsync();
+  console.log(pickerResult);
+}
 
 
 function Feed() {
   return (
-    <Container>
+    <Container style={styles.container}>
       <Content>
         <Card>
           <CardItem>
@@ -129,16 +142,41 @@ function Feed() {
 }
 function Upload() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Fazer upload de foto</Text>
-    </View>
+    <Container style={styles.container}>
+      <Content padder>
+        <Content>
+          <Image style={styles.uploadImage}
+            source={require('../assets/uploadfoto.jpg')}
+          />
+        </Content>
+        <Content>
+          <Text note style={styles.uploadText}>
+            Para cadastrar a foto de um pet, escolha a partir da sua galeria
+          </Text>
+        </Content>
+        <Button rounded onPress={openImagePickerAsync} style={styles.uploadButton}>
+          <Text style={{ color: 'black' }}>Escolha uma foto para fazer upload</Text>
+        </Button>
+      </Content>
+    </Container>
   );
 }
 function Buscar() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Buscar</Text>
-    </View>
+    <Container style={styles.container}>
+      <Header searchBar rounded style={{ backgroundColor: '#F8CC8F' }}>
+        <Item>
+          <Icon name="ios-search" />
+          <Input placeholder="Pesquisar" />
+        </Item>
+        <Button transparent>
+          <Text>Search</Text>
+        </Button>
+      </Header>
+      <Content padder>
+        <Text note>Pesquisas recentes</Text>
+      </Content>
+    </Container>
   );
 }
 
@@ -155,17 +193,17 @@ function App() {
           ),
         }} />
       <Tab.Screen name="Upload" component={Upload}
-       options={{
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="camera-enhance" color={color} size={size} />
-        ),
-      }} />
-      <Tab.Screen name="Buscar" component={Buscar} 
-      options={{
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="magnify" color={color} size={size} />
-        ),
-      }} />
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="camera-enhance" color={color} size={size} />
+          ),
+        }} />
+      <Tab.Screen name="Buscar" component={Buscar}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="magnify" color={color} size={size} />
+          ),
+        }} />
     </Tab.Navigator>
   );
 }
