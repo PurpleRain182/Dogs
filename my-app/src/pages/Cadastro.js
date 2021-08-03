@@ -56,9 +56,10 @@ export default class Cadastro extends React.Component {
                 username
             })
 
-            console.warn(response)
-            if (response.data) {
+            if (response.status === 201) {
+                Alert.alert("Cadastrado com sucesso")
                 navigation.navigate('Login')
+                
             }
             else {
                 Alert.alert("Erro no cadastro")
