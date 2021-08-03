@@ -33,7 +33,6 @@ export default class Login extends React.Component {
                 email: email,
                 password: senha
             })
-            console.warn (response)
             if (response.data) {
                 navigation.navigate('Feed')
             }

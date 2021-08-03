@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Image } from 'react-native';
+import { View, SafeAreaView, Image, ScrollView } from 'react-native';
 import { Container, Content, Card, CardItem, Thumbnail, Input, Text, Button, Icon, Left, Body, Right, Header, Item } from 'native-base';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Ionicons} from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 
 import styles from '../styles/Feed';
@@ -180,6 +180,60 @@ function Buscar() {
   );
 }
 
+function Perfil() {
+  return (
+    <Container style={styles.container}>
+      <SafeAreaView style={styles.container}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.titleBar}>
+            <Button transparent>
+              <Ionicons name="ios-arrow-back" size={24} color="#52575D"></Ionicons>
+            </Button>
+            <Button transparent>
+              <Ionicons name="ellipsis-vertical-outline" size={24} color="#52575D"></Ionicons>
+            </Button>
+          </View>
+
+          <View style={{ alignSelf: "center" }}>
+            <View style={styles.profileImage}>
+              <Image source={{ uri: 'https://scontent-gig2-1.xx.fbcdn.net/v/t1.18169-9/960028_540093559394021_1398108872_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=de6eea&_nc_eui2=AeEgkGVqsireovZ6AF0pDINUWtVq6udm7Uta1Wrq52btS7tcUhUdvfj86-crVqJNABDSrOBkL5Mo6p-5mxzH1UmW&_nc_ohc=d5ATpFKfI9kAX9jteua&tn=W9PSQbeRvkbJ7gD4&_nc_ht=scontent-gig2-1.xx&oh=f471186f97373b359a2c0f655a3d2817&oe=612C6AE1' }} style={styles.image} resizeMode="center"></Image>
+            </View>
+            <View style={styles.add}>
+              <Ionicons name="add-circle-outline" size={36} color="black" style={{ marginTop: 6, marginLeft: 2 }}></Ionicons>
+            </View>
+          </View>
+
+          <View style={styles.infoContainer}>
+            <Text style={[styles.text, { fontWeight: "200", fontSize: 36 }]}>Ronaldo</Text>
+            <Text style={[styles.text, { color: "#AEB5BC", fontSize: 14 }]}>juninho_custodio@hotmail.com</Text>
+          </View>
+
+          <View style={styles.statsContainer}>
+            <View style={styles.statsBox}>
+              <Text style={[styles.text, { fontSize: 24 }]}>5</Text>
+              <Text style={[styles.text, styles.subText]}>Pets</Text>
+            </View>
+          </View>
+
+          <View style={{ marginTop: 32 }}>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <View style={styles.mediaImageContainer}>
+                <Image source={{ uri: 'https://www.saopaulo.sp.gov.br/wp-content/uploads/2017/03/CACHORRO1.jpg' }} style={styles.image} resizeMode="cover"></Image>
+              </View>
+              <View style={styles.mediaImageContainer}>
+                <Image source={{ uri: 'https://www.saopaulo.sp.gov.br/wp-content/uploads/2017/03/CACHORRO1.jpg' }} style={styles.image} resizeMode="cover"></Image>
+              </View>
+              <View style={styles.mediaImageContainer}>
+                <Image source={{ uri: 'https://www.saopaulo.sp.gov.br/wp-content/uploads/2017/03/CACHORRO1.jpg' }} style={styles.image} resizeMode="cover"></Image>
+              </View>
+            </ScrollView>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </Container>
+  );
+}
+
 const Tab = createMaterialBottomTabNavigator();
 
 function App() {
@@ -202,6 +256,12 @@ function App() {
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="magnify" color={color} size={size} />
+          ),
+        }} />
+        <Tab.Screen name="Perfil" component={Perfil}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account-circle" color={color} size={size} />
           ),
         }} />
     </Tab.Navigator>
